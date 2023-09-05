@@ -3,8 +3,8 @@
 pragma solidity ^0.8.18;
 
 import {Test, console} from "forge-std/Test.sol";
-import {FundMe} from "../src/FundMe.sol";
-import {DeployFundME} from "../script/DeployFundMe.s.sol";
+import {FundMe} from "../../src/FundMe.sol";
+import {DeployFundMe} from "../../script/DeployFundMe.s.sol";
 
 contract FundMeTest is Test{
     // uint number = 1;
@@ -18,7 +18,7 @@ contract FundMeTest is Test{
     function setUp() external {
         // number = 2;
         // fundMe = new FundMe(0x694AA1769357215DE4FAC081bf1f309aDC325306);
-        DeployFundME deployFundME = new DeployFundME();
+        DeployFundMe deployFundME = new DeployFundMe();
         fundMe = deployFundME.run();
         vm.deal(USER, STARTING_BALANCE); // Sets the balance of user/address to another balance
     }
